@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				margin: auto;
+				background:antiquewhite;
+				width: 300px;
+				border: 1px solid black;
+				padding-top:0px;
+				padding-bottom:25px;
+				padding-right:50px;
+				padding-left:70px;
+				border-radius: 15px;
+			}
+			p{
+				width:70px; 
+				height:30px; 
+				line-height:30px; 
+				background-color:#FFFFFF; 
+				color:#000000;
+				position:relative; 
+				top:-30px; 
+				left:-50px;
+			} 	
+		</style>
+		<script type="text/javascript" src="js/new_file.js"></script>
+		<script type="text/javascript">
+    		//刷新验证码
+    		function changeImg(){
+        	document.getElementById("validateCodeImg").src="IdentifyingcodeServlet?"+Math.random();
+    		}
+    	</script>
+	</head>
+	<body >
+		<div>
+		<form action="LoginServlet" method="post" >
+			<p><b>用户登录</b></p>
+			用户账号：<input type="text" name="username" placeholder="输入用户名"/><br /><br />
+			用户口令：<input type="password" name="pwd" placeholder="输入账号密码"/><br /><br />
+			验&nbsp;&nbsp;证&nbsp;&nbsp;码：<input type="text" name="validateCode"/><br />
+            <img alt="验证码看不清，换一张" src="IdentifyingcodeServlet" id="validateCodeImg" onclick="changeImg()">
+            <a href="javascript:void(0)" onclick="changeImg()">看不清，换一张</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="submit"  value="登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="reset" value="取&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;消" /><br />
+			<center>没有账号？现在<a href="rigister.jsp">注册</a></center>
+		</form>
+		</div>
+	</body>
+</html>
